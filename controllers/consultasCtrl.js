@@ -17,8 +17,7 @@ const leetransentrefechasCtrl = async (req, res = response ) => {
             ok:false,
             msg:'Favor hablar con el administrador'
         })
-    }
-};
+    }};
 
 const leeingygastosxannoCtrl = async (req, res = response ) => {
     const {idUsuario, ingresoGasto , claseMovimientos, año} = req.body; 
