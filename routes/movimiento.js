@@ -6,7 +6,7 @@ const { Router }=require('express');
 const router=Router();
 const { check } = require('express-validator'); 
 const {registrarmovimientoCtrl, leetablamovimientoCtrl,  leetablafamiliaCtrl,
-   leetablaañosCtrl} = require('../controllers/movCtrl');
+   leetablaañosCtrl, leeOrganizacionCtrl} = require('../controllers/movCtrl');
 //FamiliasTodas
 //AñosExistentes
 
@@ -20,4 +20,5 @@ router.post('/clasemovimientos',[], leetablamovimientoCtrl);
 router.post('/familias',[], leetablafamiliaCtrl);
 router.post('/annos',[], leetablaañosCtrl);
 router.post('/registrarmovimiento',[], registrarmovimientoCtrl);
+router.post('/leeOrganizacion',[], leeOrganizacionCtrl);
 module.exports= router;

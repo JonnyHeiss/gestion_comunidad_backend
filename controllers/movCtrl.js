@@ -3,6 +3,7 @@ const { registrarmovimiento } =require('../helpers/registrarMovimiento');
 const { leetablamovimiento } =require('../helpers/leetablamovimiento');
 const { leetablafamilia } =require('../helpers/leetablafamilia');
 const { leetablaaños } =require('../helpers/leetablaaños');
+const { leeorganizacion } =require('../helpers/leeOrganizacion');
 const registrarmovimientoCtrl = async  (req, res = response ) =>{
     const {tipoDocumento, fechaDocumento, idCasa, monto,
             idUsuario,idClaseMovimiento,comentario}=req.body;
@@ -73,11 +74,28 @@ const leetablaañosCtrl = async (req, res = response ) => {
         })
     }
 };
+const leeOrganizacionCtrl = async (req, res = response ) => {
+    const {idUsuario} = req.body; 
+    console.log('leeOrganizacionCtrl',idUsuario);
+    try {
+        data  = await  leeorganizacion(idUsuario);
+        res.json ({
+            ok: true,
+            data
+         })
+    }catch (error) {
+        res.status(500).json ({
+            ok:false,
+            msg:'Favor hablar con el administrador'
+        })
+    }
+};
  module.exports ={
     registrarmovimientoCtrl,
     leetablamovimientoCtrl,
     leetablafamiliaCtrl,
     leetablaañosCtrl,
+    leeOrganizacionCtrl,
  }
 
 
