@@ -2,7 +2,7 @@ const { response } = require('express'); //para tener la intellisense
 const { leetransentrefechas } =require('../helpers/leetransentrefechas');
 const { leeingygastosxanno } =require('../helpers/leeingygastosxaño');
 const leetransentrefechasCtrl = async (req, res = response ) => {
-    const {idUsuario, fechaInicio, fechaFin, tipoFondo} = req.body; 
+    const { idUsuario, fechaInicio, fechaFin, tipoFondo } = req.body; 
     
     console.log('leetransentrefechasCtrl',idUsuario,fechaInicio, fechaFin, tipoFondo);
     try {
